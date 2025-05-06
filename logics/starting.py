@@ -86,11 +86,11 @@ async def handle_photo(message: Message):
     qr_with_noise = darken_image(qr_with_noise, factor=0.98)
 
     rotated_qr = rotate_image_with_transparency(qr_with_noise, -2)
-    resized_qr = cv2.resize(rotated_qr, (213, 213))
+    resized_qr = cv2.resize(rotated_qr, (252, 252))
 
     resized_qr_bgr = cv2.cvtColor(resized_qr, cv2.COLOR_BGRA2BGR)
 
-    x_offset, y_offset = 607, 570
+    x_offset, y_offset = 698, 463
     h, w = resized_qr_bgr.shape[:2]
     base_img[y_offset:y_offset + h, x_offset:x_offset + w] = resized_qr_bgr
 
